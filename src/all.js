@@ -49,6 +49,8 @@ function createVariantDescription(description, args, index) {
 		}
 		else if (isArray(args[i])) {
 			variantDesc += toString.call(args[i]);
+		} else if( (typeof args[i] === "object") && (args[i] !== null) ) {
+			variantDesc += JSON.stringify(args[i]);
 		}
 		else {
 			variantDesc += String(args[i]);
